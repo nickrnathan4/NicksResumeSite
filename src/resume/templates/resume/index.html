@@ -1,0 +1,102 @@
+{% load static %}
+
+<head>
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' >
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,900' >
+	<link rel='stylesheet' type='text/css' href="{% static 'resume/css/style.css' %}" />
+	<title>Nick Nathan</title>
+</head>
+
+<body>
+	<div class='main-container'>
+		<div class='blocks'>
+			<div class="block block_left" 
+				 id="portrait" 
+				 style="background-image: url('{% static 'resume/images/portrait.png' %}')">
+			
+				<div class="block_inner">
+					<div class="lblock_content">
+						<div class="panel_container">
+							<h1 class="panel_header">Hey, I'm Nick,</h1>
+							<p class="panel_text">a <b style="font-size: 22px;">Technology Consultant</b> working in DC for <b style="font-size: 22px;">Deloitte</b></p>
+							<a class="btn_connect" href="mailto:nickrnathan[at]gmail.com">Get In Touch</a>
+						</div>
+						<div class="icon_bar">
+							<a class="icon" href="https://twitter.com/Nickrnathan" target="_blank">
+							  <img src="{% static 'resume/images/twitter_icon_white.png'%}" alt="wtwitter" style="width:25px;height:25px;border:0;" onmouseover="icon_hover(this);" onmouseout="icon_hover(this);">
+							</a>
+							<a class="icon" href="https://www.linkedin.com/in/nick-nathan-51126252/" target="_blank">
+							  <img src="{% static 'resume/images/linkedin_icon_white.png'%}" alt="wlinkedin" style="width:25px;height:25px;border:0;" onmouseover="icon_hover(this);" onmouseout="icon_hover(this);">
+							</a>
+							<a class="icon" href="https://github.com/nickrnathan4" target="_blank">
+							  <img src="{% static 'resume/images/github_icon_white.png'%}" alt="wgithub" style="width:25px;height:25px;border:0;" onmouseover="icon_hover(this);" onmouseout="icon_hover(this);">
+							</a>
+						</div>						
+					</div>
+				</div>
+
+			</div>			
+			
+			<div class="block block_right">
+				<div class="block_inner block_inner_right">
+					<div>
+						<h1>About</h1>
+						<p>My name is Nick Nathan and I'm a technology consultant fighting financial crime at Deloitte & Touche. I've worked with several financial clients building software tools and data infrastructure for enterprise scale systems. I graduated from Georgetown University in Washington, DC with a degree in computer science and economics.</p>
+					</div>
+					<div>
+						<h1>Skills</h1>
+						<div class='skills_text'>
+							<p>As a technology consultant I have developed a blend of technical expertise and strong communication skills to deliver the highest quality client service.</p>
+							<p><strong>Languages </strong> - C#, Java, Python, Clojure, SQL</p>
+							<p><strong>Technical Tools </strong> - MS SQL Server, Postgres, Heroku, Docker, AWS, Azure, Bash, Powershell</p>
+							<p><strong>Other Cool Stuff </strong> - Numpy & Pandas, Arduino, Tableau</p>		
+						</div>
+					</div>
+					<div>	
+						<h1>Experience</h1>
+						<p><strong>Deloitte & Touche </strong> - <i>Technology Consultant</i> - Jul. '15 – Current<br>
+						Built backend and frontend components for a proprietary anti-money laundering investigations tool. Maintained critical application infrastructure while managing performance testing.</p>
+						<p><strong>Main Street Genome </strong> - <i>Junior Software Engineer</i> - Sep. '14 – Jun. '15<br>
+						Implemented web services and API endpoints for sales management tool VendorIQ.</p>					
+						<p><strong>Navigant Consulting </strong> - <i>Legal Technology Solutions Intern</i> - Jun. '14 – Jul. '14<br>
+						Refined application logic and built interactive dashboard for power systems management app.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script>
+function icon_hover(element) {
+	var icon = element.getAttribute('alt');
+	switch(icon) {
+	    case 'wtwitter':
+	        element.setAttribute('src', "{% static 'resume/images/twitter_icon_crimson.png'%}");
+	       	element.setAttribute('alt', "ctwitter");
+	        break;
+	    case 'ctwitter':
+	        element.setAttribute('src', "{% static 'resume/images/twitter_icon_white.png'%}");
+	       	element.setAttribute('alt', "wtwitter");
+	        break;
+	    case 'wlinkedin':
+	        element.setAttribute('src', "{% static 'resume/images/linkedin_icon_crimson.png'%}");
+	       	element.setAttribute('alt', "clinkedin");
+	        break;
+	   	case 'clinkedin':
+	        element.setAttribute('src', "{% static 'resume/images/linkedin_icon_white.png'%}");
+	       	element.setAttribute('alt', "wlinkedin");
+	        break;
+	    case 'wgithub':
+	     	element.setAttribute('src', "{% static 'resume/images/github_icon_crimson.png'%}");
+	     	element.setAttribute('alt', "cgithub");
+	        break;
+	    case 'cgithub':
+	     	element.setAttribute('src', "{% static 'resume/images/github_icon_white.png'%}");
+	     	element.setAttribute('alt', "wgithub");
+	        break;
+	    default:
+	    	return;
+	}
+}
+</script>

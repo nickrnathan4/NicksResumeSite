@@ -1,0 +1,244 @@
+
+/****************************/
+/* Default Element Styles 	*/
+/****************************/
+
+h1 {
+	color: #323B3C;
+	font-family: 'PT Sans Narrow';
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 40px;
+	letter-spacing: 5px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+
+p {
+	color: #516163;
+	font-family: 'PT Sans';
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 24px;
+	margin-bottom: 18px;
+}
+
+a {
+	color: #63B2BB;	
+}
+
+a:hover {
+	color: #323B3C;
+}
+
+strong {
+	color: #323B3C;
+	font-size: 18px;
+}
+
+body {
+	margin: 0px;
+}
+
+/****************************/
+/*		Main Container 		*/
+/****************************/
+
+.main-container {
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width: 768px) {
+	.main-container {
+	    height: auto;
+	}
+}
+
+
+.blocks {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;		
+	align-items: stretch;
+
+	width: 100%;
+    height: 100%;
+}
+@media screen and (max-width: 768px)  {
+	.blocks {
+	    flex-direction: column;
+	    height: auto;
+	}
+}
+
+.block {
+    width: 50%;
+    height: 100%;
+}
+
+.block_inner {
+	padding: 20px;
+	height: 100%;
+	width: auto;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/****************************/
+/*		Left Block 			*/
+/****************************/
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes TextSlideInFromLeft {
+  0% {
+    transform: translateX(-75%);
+  }
+  50% {
+    transform: translateX(-75%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes IconSlideInFromLeft {
+  0% {
+    transform: translateX(-75%);
+  }
+  50% {
+    transform: translateX(-75%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.block_left {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    background-color: #63B2BB;
+    animation: 1s ease-in 0s 1 slideInFromLeft;
+}
+@media screen and (max-width: 768px) {
+	.block_left {
+	    width: 100%;
+	    height: 70vh;
+	    position: relative;
+	}
+}
+
+#portrait {
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.lblock_content {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 30%;
+}
+
+.panel_container {
+	animation: 1s linear 0s 1 TextSlideInFromLeft;
+	margin-bottom: 20px;
+}
+
+.panel_header {
+	color: white;
+}
+
+.panel_text {
+	width: auto;
+	color: white;
+	margin-bottom: 35px;
+}
+
+.btn_connect {
+    background: #0c2f33;
+    color: #fff;
+    font-size: 18;
+    border: 3px solid #0c2f33;
+    padding: 15px 60px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'PT Sans';
+}
+
+.btn_connect:hover {
+    background-color: crimson; 
+    border: 3px solid crimson;
+    color: #fff;
+}
+
+.icon_bar {
+	animation: 1.5s linear 0s 1 IconSlideInFromLeft;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 0 20%;
+}
+
+/****************************/
+/*		Right Block 		*/
+/****************************/
+
+@keyframes slideInFromBelow {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  75% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.block_right {
+    height: auto;
+    position: absolute;
+    right: 0;
+    animation: 2s ease-in 0s  slideInFromBelow;
+}
+@media screen and (max-width: 768px) {
+	.block_right {
+	    width: 100%;
+	    height: auto;
+	    position: static;
+	}
+	.block_inner_right {
+		display: block;
+	}
+}
+
+.skills_text {
+	margin-bottom: 20px;
+}
+
+.skills_text p {
+	margin: 5px 0px;
+}
+
+
+
+
+
+
+
