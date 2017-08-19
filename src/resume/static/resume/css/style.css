@@ -6,22 +6,27 @@
 h1 {
 	color: #323B3C;
 	font-family: 'PT Sans Narrow';
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 400;
-	line-height: 40px;
-	letter-spacing: 5px;
-	margin-bottom: 5px;
+	line-height: 20px;
+	letter-spacing: 2px;
+	margin-bottom: 2px;
 	text-transform: uppercase;
-}
+	}
 
 p {
 	color: #516163;
 	font-family: 'PT Sans';
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 300;
-	line-height: 24px;
-	margin-bottom: 18px;
+	line-height: 18px;
+	margin-bottom: 9px;
 }
+
+strong {
+	color: #323B3C;
+	font-size: 15px;
+	}
 
 a {
 	color: #63B2BB;	
@@ -31,13 +36,29 @@ a:hover {
 	color: #323B3C;
 }
 
-strong {
-	color: #323B3C;
-	font-size: 18px;
-}
-
 body {
 	margin: 0px;
+}
+
+/********* Desktop *********/
+@media screen and (min-width: 800px)  {
+
+	h1 {
+		font-size: 30px;
+		line-height: 40px;
+		letter-spacing: 5px;
+		margin-bottom: 5px;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 18px;
+	}
+
+	strong {
+		font-size: 18px;
+	}
 }
 
 /****************************/
@@ -46,30 +67,18 @@ body {
 
 .main-container {
     width: 100%;
-    height: 100%;
+   	height: auto;
 }
-@media screen and (max-width: 768px) {
-	.main-container {
-	    height: auto;
-	}
-}
-
 
 .blocks {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: flex-start;		
 	align-items: stretch;
 
 	width: 100%;
-    height: 100%;
-}
-@media screen and (max-width: 768px)  {
-	.blocks {
-	    flex-direction: column;
-	    height: auto;
-	}
+    height: auto;
 }
 
 .block {
@@ -83,7 +92,18 @@ body {
 	width: auto;
 	display: flex;
     flex-direction: column;
-    justify-content: center;
+}
+
+/********* Desktop *********/
+@media screen and (min-width: 800px)  {
+	.blocks {
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+
+	.main-container {	
+	    height: 100%;
+	}
 }
 
 /****************************/
@@ -125,30 +145,26 @@ body {
 
 .block_left {
     text-align: center;
-    position: fixed;
+	width: 100%;
+    height: 70vh;
     left: 0;
     background-color: #63B2BB;
     animation: 1s ease-in 0s 1 slideInFromLeft;
-}
-@media screen and (max-width: 768px) {
-	.block_left {
-	    width: 100%;
-	    height: 70vh;
-	    position: relative;
-	}
 }
 
 #portrait {
 	background-size: auto 100%;
 	background-repeat: no-repeat;
-	background-position: right;
+	background-position: center;
 }
 
 .lblock_content {
-	width: 300px;
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 30%;
+	width: 250px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 100%;
+    justify-content: center;
 }
 
 .panel_container {
@@ -164,6 +180,10 @@ body {
 	width: auto;
 	color: white;
 	margin-bottom: 35px;
+}
+
+.panel_text b {
+	font-size:14;
 }
 
 .btn_connect {
@@ -193,6 +213,26 @@ body {
 	padding: 0 20%;
 }
 
+/********* Desktop *********/
+@media screen and (min-width: 800px) {
+	.block_left {
+		height: 100%;
+	}
+
+	#portrait {
+		background-position: right;
+	}
+
+	.lblock_content {
+        margin-left: 5%;
+    	margin-bottom: 40%;
+	}
+
+	.panel_text b {
+		font-size:24;
+	}
+}
+
 /****************************/
 /*		Right Block 		*/
 /****************************/
@@ -213,19 +253,9 @@ body {
 }
 .block_right {
     height: auto;
-    position: absolute;
+    width: 100%;
     right: 0;
     animation: 2s ease-in 0s  slideInFromBelow;
-}
-@media screen and (max-width: 768px) {
-	.block_right {
-	    width: 100%;
-	    height: auto;
-	    position: static;
-	}
-	.block_inner_right {
-		display: block;
-	}
 }
 
 .skills_text {
@@ -236,6 +266,15 @@ body {
 	margin: 5px 0px;
 }
 
+/********* Desktop *********/
+@media screen and (min-width: 800px) {
+	.block_right {
+	    height: auto;
+	}
+	.block_inner_right {
+		display: block;
+	}
+}
 
 
 

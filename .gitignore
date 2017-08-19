@@ -3,16 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Django stuff:
+# Django stuff
 *.log
 local_settings.py
 
 # Environments
 .env
-.venv
-env/
-venv/
-ENV/
 
 # mypy
 .mypy_cache/
@@ -20,5 +16,3 @@ ENV/
 # pyenv
 .python-version
 
-# Stack Definitions
-*.yml
