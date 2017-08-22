@@ -8,12 +8,12 @@ services:
       - "5432:5432"
 
   web:
-    #image: nickrnathan/nicksresumesite_web
-    build: .
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn nicksresumesite.wsgi -b 0.0.0.0:80"
-    #command: "python3 manage.py runserver 0.0.0.0:8000"
+    image: nickrnathan/nicksresumesite_web:latest
+    # build: .
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn nicksresumesite.wsgi:application -b 0.0.0.0:80"
+    # command: "python3 manage.py runserver 0.0.0.0:8000"
     volumes:
-      - ./src:/src
+    # - ./src:/app
       - ./static:/static
     expose:
       - "80"
@@ -25,12 +25,13 @@ services:
       - SECRET_KEY=${DJANGO_SECRET_KEY}
 
   nginx:
-    image: nginx:latest
+    image: nickrnathan/nginx:latest
+    # image: nginx:latest
     ports:
       - "80:80"
     volumes:
-      - ./src:/src
-      - ./config/nginx:/etc/nginx/conf.d
+      # - ./src:/app
+      # - ./nginx:/etc/nginx/conf.d
       - ./static:/static
     depends_on:
       - web
